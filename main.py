@@ -8,7 +8,7 @@ from IPython.display import Audio
 classifier = pipeline("sentiment-analysis", "blanchefort/rubert-base-cased-sentiment")
 
 print(classifier("Ответ убил меня. Я стану отцом двухсотый раз!"))
-
+print(classifier("Ответ убил меня. Я стану отцом двухсотый раз!"))
 
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-large")
 model = BlipForConditionalGeneration.from_pretrained(
