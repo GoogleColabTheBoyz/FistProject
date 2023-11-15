@@ -1,5 +1,4 @@
 requests
-PIL
 transformers
 IPython.display
 streamlit
