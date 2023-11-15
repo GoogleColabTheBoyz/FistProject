@@ -1,6 +1,4 @@
-requests
 transformers
 streamlit
 numpy
-oundfile
-io
+
