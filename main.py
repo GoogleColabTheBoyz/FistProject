@@ -9,6 +9,10 @@ import numpy as np
 import soundfile as sf
 import io
 
+st.title('From image to audio')
+st.header('This neural network voices what is depicted in your image')
+st.subheader('To try it, upload your image by clicking on the button below')
+
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-large")
 model = BlipForConditionalGeneration.from_pretrained(
     "Salesforce/blip-image-captioning-large"
