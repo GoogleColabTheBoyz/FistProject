@@ -4,38 +4,53 @@ from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from transformers import AutoProcessor, AutoModel
 from IPython.display import Audio
-
-classifier = pipeline("sentiment-analysis", "blanchefort/rubert-base-cased-sentiment")
-
-print(classifier("Ответ убил меня. Я стану отцом!"))
-print(classifier("Надеюсь получится!"))
-
+import streamlit as st
+import numpy as np
+import soundfile as sf
+import io
 
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-large")
 model = BlipForConditionalGeneration.from_pretrained(
     "Salesforce/blip-image-captioning-large"
 )
+TEXT = "a potography of"
 
-img_url = "https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg"
-raw_image = Image.open(requests.get(img_url, stream=True).raw).convert("RGB")
+uploadImage = st.file_uploader("Choose image")
 
-text = "a photography of"
-inputs = processor(raw_image, text, return_tensors="pt")
 
-out = model.generate(**inputs)
-print(processor.decode(out[0], skip_special_tokens=True))
+if uploadImage is not None:
 
-ImageToTextInput = processor.decode(out[0], skip_special_tokens=True)
 
-processor = AutoProcessor.from_pretrained("suno/bark-small")
-model = AutoModel.from_pretrained("suno/bark-small")
+    raw_image = Image.open(uploadImage).convert("RGB")
 
-inputs = processor(
-    text=[ImageToTextInput],
-    return_tensors="pt",
-)
+    inputs = processor(raw_image, TEXT, return_tensors="pt")
 
-speech_values = model.generate(**inputs, do_sample=True)
+    out = model.generate(**inputs)
+    st.text(processor.decode(out[0], skip_special_tokens=True))
 
-sampling_rate = model.generation_config.sample_rate
-Audio(speech_values.cpu().numpy().squeeze(), rate=sampling_rate)
+    ImageToTextInput = processor.decode(out[0], skip_special_tokens=True)
+else:
+    st.error("Upload image!")
+
+
+
+
+if st.button("translate to audio"):
+
+    processor = AutoProcessor.from_pretrained("suno/bark-small")
+    model = AutoModel.from_pretrained("suno/bark-small")
+
+    inputs = processor(
+        text=[ImageToTextInput],
+        return_tensors="pt",
+    )
+
+    speech_values = model.generate(**inputs, do_sample=True)
+
+    sampling_rate = model.generation_config.sample_rate
+    audio_data = speech_values.cpu().numpy().squeeze()
+    audio_buffer = io.BytesIO()
+    sf.write(audio_buffer, audio_data, sampling_rate, format='WAV')
+    audio_buffer.seek(0)
+
+    st.audio(audio_buffer, format='audio/wav')
