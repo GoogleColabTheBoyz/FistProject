@@ -1,6 +1,7 @@
 requests
 Pillow
 transformers==4.34.0
+protobuf==3.19.6
 streamlit
 numpy
 ipython
