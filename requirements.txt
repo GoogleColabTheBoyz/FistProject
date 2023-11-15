@@ -1,8 +1,6 @@
 requests
 Pillow
 transformers==4.35.0
-torch
-tensorflow
 streamlit
 numpy
 ipython
