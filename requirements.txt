@@ -1,6 +1,8 @@
 requests
 Pillow
 transformers
+torch
+tensorflow
 streamlit
 numpy
 ipython
