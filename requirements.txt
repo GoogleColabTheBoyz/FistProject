@@ -1,0 +1,8 @@
+requests
+PIL
+transformers
+IPython.display
+streamlit
+numpy
+oundfile
+io
