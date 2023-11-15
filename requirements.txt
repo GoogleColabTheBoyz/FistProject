@@ -3,3 +3,4 @@ streamlit
 numpy
 ipython
 soundfile
+io
