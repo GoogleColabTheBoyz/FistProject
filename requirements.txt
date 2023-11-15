@@ -1,4 +1,6 @@
-transformers==4.11.3
+requests
+Pillow
+transformers
 streamlit
 numpy
 ipython
