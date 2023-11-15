@@ -1,6 +1,5 @@
 requests
 transformers
-IPython.display
 streamlit
 numpy
 oundfile
