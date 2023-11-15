@@ -1,6 +1,6 @@
 requests
 Pillow
-transformers
+transformers==4.11.3
 torch
 tensorflow
 streamlit
