@@ -1,7 +1,7 @@
 requests
 Pillow
 transformers
-git+https://github.com/huggingface/transformers.git@main
+https://github.com/huggingface/transformers.git@main
 torch
 tensorflow
 streamlit
