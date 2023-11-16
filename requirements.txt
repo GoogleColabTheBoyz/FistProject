@@ -10,3 +10,5 @@ tensorflow[and-cuda]==2.13.0
 torch==2.1.1
 TensorRT==8.6.1
 setuptools==68.2.2 
+CUDA==11.8
+cuDNN==8.6
