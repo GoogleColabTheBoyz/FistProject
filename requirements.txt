@@ -1,7 +1,7 @@
 Pillow==10.1.0
 transformers==4.35.0
 streamlit==1.28.1
-numpy==1.26.1 
+numpy==1.24.3
 ipython==8.17.2 
 soundfile
 pip==23.3.1
