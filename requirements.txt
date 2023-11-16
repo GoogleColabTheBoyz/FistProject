@@ -6,4 +6,4 @@ ipython==8.17.2
 soundfile
 pip==23.3.1
 git+https://github.com/tensorflow/io
-rotobuf==3.19.6
+protobuf==3.19.6
