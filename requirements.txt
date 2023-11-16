@@ -5,4 +5,4 @@ numpy==1.26.1
 ipython==8.17.2 
 soundfile
 pip==23.3.1
-git+https://github.com/python/cpython/blob/3.12/Lib/io.py
+git+https://github.com/python/cpython/tree/3.12
