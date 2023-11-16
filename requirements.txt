@@ -6,4 +6,4 @@ ipython==8.17.2
 soundfile
 git+https://github.com/tensorflow/io
 git+https://github.com/salesforce/LAVIS
-PyTorch==1.10. 
+git+https://github.com/pytorch/pytorch
