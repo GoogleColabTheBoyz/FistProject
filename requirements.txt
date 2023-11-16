@@ -7,3 +7,5 @@ soundfile
 pip==23.3.1
 git+https://github.com/tensorflow/io
 tensorflow==2.15.0
+CUDA
+TensorRT
