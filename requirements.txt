@@ -9,3 +9,4 @@ git+https://github.com/tensorflow/io
 tensorflow==2.15.0
 git+https://github.com/NVIDIA/cuda-python
 git+https://github.com/NVIDIA/TensorRT
+CUDA_HOME
