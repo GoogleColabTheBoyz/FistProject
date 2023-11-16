@@ -5,5 +5,4 @@ numpy==1.23
 ipython==8.17.2 
 soundfile
 git+https://github.com/tensorflow/io
-git+https://github.com/salesforce/LAVIS
-git+https://github.com/pytorch/pytorch
+git+https://github.com/salesforce/LAVIS[BLIP]
