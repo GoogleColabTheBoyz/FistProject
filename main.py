@@ -1,4 +1,4 @@
-from transformers import pipeline
+"""from transformers import pipeline
 import requests
 from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
@@ -7,7 +7,7 @@ from IPython.display import Audio
 import streamlit as st
 import numpy as np
 import soundfile as sf
-import io
+import io"""
 
 st.title('From image to audio')
 st.header('This neural network voices what is depicted in your image')
