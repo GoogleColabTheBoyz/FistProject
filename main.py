@@ -1,11 +1,8 @@
 from transformers import pipeline
-import requests
 from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from transformers import AutoProcessor, AutoModel
-from IPython.display import Audio
 import streamlit as st
-import numpy as np
 import soundfile as sf
 import io
 
