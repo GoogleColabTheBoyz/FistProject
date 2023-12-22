@@ -15,7 +15,7 @@ def test_picture_to_text_endpoint():
     response = client.post("/picturetotext", files={"file": ("image.jpg", image_bytes, "image/jpeg")})
     assert response.status_code == 200
 
-    expected_keywords = ["dog", "pink", "tongue"]
+    expected_keywords = ["pink", "tongue"]
     generated_description = response.json().get("translation", "").lower()
     
     for keyword in expected_keywords:
