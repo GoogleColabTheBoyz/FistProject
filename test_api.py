@@ -1,7 +1,6 @@
 from fastapi.testclient import TestClient
 from PIL import Image
 import io
-import requests
 from main import app
 
 client = TestClient(app)
@@ -15,5 +14,11 @@ def test_picture_to_text_endpoint():
 
     response = client.post("/picturetotext", files={"file": ("image.jpg", image_bytes, "image/jpeg")})
     assert response.status_code == 200
-    assert "translation" in response.json()
+
+    expected_keywords = ["dog", "pink", "tongue"]
+    generated_description = response.json().get("translation", "").lower()
+    
+    for keyword in expected_keywords:
+        assert keyword in generated_description
+
 test_picture_to_text_endpoint()
