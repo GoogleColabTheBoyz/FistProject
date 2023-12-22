@@ -2,6 +2,8 @@ transformers
 Pillow
 streamlit
 soundfile
-torch
-torchvision
-torchaudio
+fastapi
+pydantic
+uvicorn
+httpx
+pytest
