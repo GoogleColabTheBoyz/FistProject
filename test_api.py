@@ -2,6 +2,7 @@ from fastapi.testclient import TestClient
 from PIL import Image
 import io
 import requests
+from main import app
 
 client = TestClient(app)
 
