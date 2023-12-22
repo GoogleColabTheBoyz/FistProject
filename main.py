@@ -28,7 +28,7 @@ async def pictureToText(file: UploadFile = File(...)):
     out = model.generate(**inputs, max_length=50)
     return {"translation": processor.decode(out[0], skip_special_tokens=True)}
 
-st.title("From image to audio")
+"""st.title("From image to audio")
 st.header("This neural network voices what is depicted in your image")
 st.subheader("To try it, upload your image by clicking on the button below")
 
@@ -41,4 +41,4 @@ if uploadImage is not None:
     res = requests.post("http://127.0.0.1:8001/picturetotext", files={"file": bytes_io})
     st.text(res.json())
 else:
-    st.error("Upload image!")
+    st.error("Upload image!")"""
