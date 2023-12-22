@@ -25,7 +25,7 @@ async def pictureToText(file: UploadFile = File(...)):
     image = Image.open(BytesIO(await file.read())).convert("RGB")
     image = transform(image)
     inputs = processor(image, TEXT, return_tensors="pt")
-    out = model.generate(**inputs, max_length=50)  # Установите значение max_length в нужное вам число
+    out = model.generate(**inputs, max_length=50)
     return {"translation": processor.decode(out[0], skip_special_tokens=True)}
 
 st.title("From image to audio")
