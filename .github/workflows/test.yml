@@ -25,6 +25,7 @@ jobs:
         pip install -r requirements.txt
         pip install torchvision
         pip install torchaudio
+        pip install python-multipart
 
     - name: Run tests
       run: pytest
